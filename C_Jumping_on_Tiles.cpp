@@ -7,9 +7,9 @@ using namespace std;
 #define print_arr(arr, n)  for(ll i=0; i<n; i++)  cout<<arr[i]<<' '; cout<<endl; 
 
  
-ll  maxi(ll arr[],ll n)  {ll maxi= -1000000000000; for(ll i=0; i<n; i++) if(maxi<arr[i])maxi=arr[i]; return maxi;}
-ll  mini(ll arr[],ll n)  {ll mini= 1000000000000; for(ll i=0; i<n; i++) if(mini>arr[i])mini=arr[i]; return mini;}
- 
+ll   maxi(ll arr[],ll n)  {ll maxi= -1000000000000; for(ll i=0; i<n; i++) if(maxi<arr[i])maxi=arr[i]; return maxi;}
+ll   mini(ll arr[],ll n)  {ll mini= 1000000000000; for(ll i=0; i<n; i++) if(mini>arr[i])mini=arr[i]; return mini;}
+void print_vect(vector < ll > &vect)  {for(auto it: vect)  cout<<it<<' '; cout<<endl; }
 // space for helper functions
 int main()
 {
@@ -33,38 +33,40 @@ for(int i=0; i<len; i++)
   sort(vect.begin() ,vect.end());
  
 
-  // for(auto it : vect)
-  //   cout<<it.first<<" "<<it.second<<endl;
+  for(auto it : vect)
+    cout<<it.first<<" "<<it.second<<endl;
   if(ladder)
   { 
+     
     ll res=0;
     vector<bool> visited(len, false);
     vector<ll> res_vec;
     visited[1]=true;
     res_vec.push_back(1);
     int curr_pos=0;
+    
   while(curr_pos!=len-1)
     {
     ll x = arr[curr_pos];
     pair<ll, ll> k= make_pair(x, curr_pos);
      auto jit =find(vect.begin(), vect.end(), k);
    
-  // cout<<x <<" found at "<<jit->first<<","<<jit->second<<endl;
+//   cout<<x <<" found at "<<jit->first<<","<<jit->second<<endl;
     auto y =jit;
     y++;
    
     while(visited[y->second+1])
       { 
-        //cout<<y->second<<endl;
+     //   cout<<y->second<<endl;
         y++;
       }
-    // cout<<x <<" stopping at "<<y->first<<","<<y->second<<endl;
+   //  cout<<x <<" stopping at "<<y->first<<","<<y->second<<endl;
    res+=abs(y->first - x);
    
  
   curr_pos = y->second;
    visited[curr_pos+1]=true;
-   //cout<<"pushing "<<curr_pos+1<<endl;
+ //  cout<<"pushing "<<curr_pos+1<<endl;
    res_vec.push_back(curr_pos+1);
     vect.erase(jit);
     }
@@ -76,6 +78,7 @@ for(int i=0; i<len; i++)
   }
   else
   {
+   
      ll res=0;
     vector<bool> visited(len, false);
     vector<ll> res_vec;
@@ -87,22 +90,33 @@ for(int i=0; i<len; i++)
     ll x = arr[curr_pos];
     pair<ll, ll> k= make_pair(x, curr_pos);
      auto jit =find(vect.begin(), vect.end(), k);
-   
-   // cout<<x <<" found at "<<jit->first<<","<<jit->second<<endl;
+     visited[curr_pos+1]=true;
+    //cout<<x <<" found at "<<jit->first<<","<<jit->second<<endl;
     auto y =jit;
+    y++;
+    while(y!=vect.end() && y->first == x)
+      y++;
     y--;
-   
-    while(visited[y->second+1])
+    while(y!=vect.begin() && visited[y->second+1] )
       {
-        // cout<<y->second<<endl;
+      //   cout<<y->second<<endl;
         y--;
       }
-  //   cout<<x <<" stopping at "<<y->first<<","<<y->second<<endl;
+      int u= y->first;
+      while(y->first==u)
+        y--;
+        y++;
+       while(y!=vect.end() && visited[y->second+1] )
+      {
+        // cout<<y->second<<endl;
+        y++;
+      }  
+    // cout<<x <<" stopping at "<<y->first<<","<<y->second<<endl;
    res+=abs(y->first - x);
    
  
   curr_pos = y->second;
-   visited[curr_pos+1]=true;
+ 
    //cout<<"pushing "<<curr_pos+1<<endl;
    res_vec.push_back(curr_pos+1);
     vect.erase(jit);
