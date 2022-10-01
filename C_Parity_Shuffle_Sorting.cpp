@@ -24,6 +24,7 @@ cin>>n;
 ll arr[n];
 read(arr, n);
 vector<pair<ll, ll>> vect;
+
 for(int i=0; i<n; i++)
 {   
     // ll a=i-1>=0?arr[i-1]:INT_MIN;

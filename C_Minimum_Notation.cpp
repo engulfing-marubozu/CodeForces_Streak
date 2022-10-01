@@ -19,8 +19,37 @@ cin>>tc;
 while(tc--)
 {
 // your testcases here
-deque<int> dq;
-dq.pop_front()
+string  sorted, s;
+cin>>sorted;
+s=sorted;
+sort(sorted.begin(), sorted.end());
+int i=0;
+
+while(sorted[i]==s[i])
+  i++;
+
+  i++;
+
+while(sorted[i]==sorted[i-1])
+ i++;
+ //cout<<i<<endl;
+  int j=sorted.length()-1;
+while(sorted[j]==sorted[i-1])
+  j--;
+  int k=sorted.length()-1;
+ 
+while(sorted[j]==s[k])
+{
+    j--; k--;
+}
+
+ for(int m=i; m<j; m++)
+   {
+    int x = sorted[m]-'0';
+    char ch = x + '0'+1;
+    sorted[m]=sorted[m]=='9'?'9':ch;
+   }
+  cout<<sorted<<endl;    
 }
 return 0;
 }

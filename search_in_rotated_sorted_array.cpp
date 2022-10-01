@@ -12,15 +12,39 @@ ll  mini(ll arr[],ll n)  {ll mini= 1000000000000; for(ll i=0; i<n; i++) if(mini>
 void print_vect(vector < ll > &vect)  {for(auto it: vect)  cout<<it<<' '; cout<<endl; }
  
 // space for helper functions
+// 4 6 9 10 1 2 
+
+
 int main()
 {
-ll tc;
-cin>>tc;
-while(tc--)
-{
-// your testcases here
-deque<int> dq;
-dq.pop_front()
-}
+int n;
+cin>>n;
+int arr[n];
+read(arr, n);
+int left=0, right=n-1;
+if(arr[0]<arr[n-1])
+    cout<<arr[0];
+    else
+    {
+   while(true)
+   {   
+      int mid = (left+right)/2;
+    
+       if(mid==0 || mid==n-1)
+         {
+            cout<<arr[mid];
+            break;
+         }
+        if(arr[mid] < arr[mid+1] &&  arr[mid]< arr[mid-1])
+         {
+            cout<<arr[mid];
+            break;
+         }
+       if(arr[mid]> arr[0])
+           left= mid+1;
+        else
+          right = mid-1;   
+   }
+    }
 return 0;
 }

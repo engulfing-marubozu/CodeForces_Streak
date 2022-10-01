@@ -19,8 +19,23 @@ cin>>tc;
 while(tc--)
 {
 // your testcases here
-deque<int> dq;
-dq.pop_front()
-}
+ll n;
+cin>>n; 
+ll arr[n];
+read(arr,n);
+ll odd=0, even=0;
+for(int i=0; i<n; i++)
+  if(arr[i]%2==0)
+    even++;
+    else
+    odd++;
+  if(even%2!=0)
+     odd--;
+   
+   if(odd%4==0 || (odd+1)%4==0 )
+   cout<<"Alice\n";
+   else
+   cout<<"Bob\n";  
+  }
 return 0;
 }

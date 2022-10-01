@@ -19,8 +19,35 @@ cin>>tc;
 while(tc--)
 {
 // your testcases here
-deque<int> dq;
-dq.pop_front()
+ll n,k;
+cin>>n>>k;
+ll arr[k];
+read(arr,k);
+reverse(arr, arr + k);
+ll mini=INT_MAX;
+bool x=true;
+ for(int i=0; i<k-1; i++)
+   {
+         if(arr[i]-arr[i+1] >  mini)
+           {
+            cout<<"No\n";
+            x=false;
+            break;
+           }
+        else
+          mini=  arr[i]-arr[i+1];  
+   }if(x)
+   {
+  ll r = n-k;
+  ll res=arr[k-1];
+  while(r--)
+    res-=mini;
+//cout<<res<<endl;
+    if(res>mini)
+    cout<<"No\n";
+    else
+    cout<<"Yes\n";
+   }
 }
 return 0;
 }
