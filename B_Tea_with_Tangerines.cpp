@@ -5,10 +5,7 @@ using namespace std;
 #define  ll long long int
 #define  read(arr, n)  for(ll i=0; i<n; i++) cin>>arr[i];
 #define print(arr, n)  for(ll i=0; i<n; i++)  cout<<arr[i]<<' '; cout<<endl;
-#define fori(s,e,g)    for(ll i=s; i<=e;  i+=g)
-#define ford(s,e,g)    for(ll i=s; i>=e; i-=g)
-#define p(temp)        cout<<temp<<endl
- 
+#define for_loop()  for(int i=0; i<n; i++)
 ll  sum(ll arr[],ll n)  {ll sum=0; for(ll i=0; i<n; i++) sum+=arr[i]; return sum;}
 ll  maxi(ll arr[],ll n)  {ll maxi= -1000000000000; for(ll i=0; i<n; i++) if(maxi<arr[i])maxi=arr[i]; return maxi;}
 ll  mini(ll arr[],ll n)  {ll mini= 1000000000000; for(ll i=0; i<n; i++) if(mini>arr[i])mini=arr[i]; return mini;}
@@ -21,7 +18,23 @@ ll tc;
 cin>>tc;
 while(tc--)
 {
+   
 // your testcases here
+ll n;
+cin>>n;
+ll arr[n];
+read(arr,n);
+ ll min_element = mini(arr,n)*2-1;
+ ll res=0;
+for(int i=0; i<n; i++)
+   { 
+    if(arr[i]%min_element==0)
+         res+=(arr[i]/min_element -1);
+         else
+    res+=(arr[i]/min_element );
+   }
+cout<<res<<endl;
+
 }
 return 0;
 }

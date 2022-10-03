@@ -12,6 +12,12 @@ ll  mini(ll arr[],ll n)  {ll mini= 1000000000000; for(ll i=0; i<n; i++) if(mini>
 void print_vect(vector < ll > &vect)  {for(auto it: vect)  cout<<it<<' '; cout<<endl; }
  
 // space for helper functions
+int solve(int even, int odd)
+{
+    
+
+    int 
+}
 int main()
 {
 ll tc;
@@ -29,13 +35,7 @@ for(int i=0; i<n; i++)
     even++;
     else
     odd++;
-  if(even%2!=0)
-     odd--;
-   
-   if(odd%4==0 || (odd+1)%4==0 )
-   cout<<"Alice\n";
-   else
-   cout<<"Bob\n";  
+  cout<< solve(even, odd)<<endl;  
   }
 return 0;
 }
