@@ -5,6 +5,9 @@ using namespace std;
 #define  ll long long int
 #define  read(arr, n)  for(ll i=0; i<n; i++) cin>>arr[i];
 #define print(arr, n)  for(ll i=0; i<n; i++)  cout<<arr[i]<<' '; cout<<endl;
+#define fori(s,e,g)    for(ll i=s; i<=e; i+=g)
+#define ford(s,e,g)    for(ll i=s; i>=e; i-=g)
+#define p(temp)        cout<<temp<<endl
  
 ll  sum(ll arr[],ll n)  {ll sum=0; for(ll i=0; i<n; i++) sum+=arr[i]; return sum;}
 ll  maxi(ll arr[],ll n)  {ll maxi= -1000000000000; for(ll i=0; i<n; i++) if(maxi<arr[i])maxi=arr[i]; return maxi;}
@@ -12,51 +15,47 @@ ll  mini(ll arr[],ll n)  {ll mini= 1000000000000; for(ll i=0; i<n; i++) if(mini>
 void print_vect(vector < ll > &vect)  {for(auto it: vect)  cout<<it<<' '; cout<<endl; }
  
 // space for helper functions
-
 int main()
 {
 ll tc;
 cin>>tc;
 while(tc--)
 {
-  
 // your testcases here
-ll n;
-cin>>n;
+ll n,k,m;
+cin>>n>>k;
 string s;
+m=k;
 cin>>s;
-bool arr[26];
-memset(arr, false, sizeof(arr));
+sort(s.begin(), s.end());
+vector<int> vect(26, 0);
+fori(0, n-1,1)
+  vect[(int)(s[i]-'a')]++;
 string res="";
-unordered_map<char, char> mapp;
- for(int i=0; i<n; i++)
-    res+=(char(i+'a'));
-map<char, char> mapp;
-while(true)
-{
-    for(int i=0; i<n; i++)
-      {
-        if(s[i]==res[i])
-            swap(res[i], res[(i+1)%n]);
-            
-       else if(mapp.find(s[i])!=mapp.end())
-       {
-            res.insert(i, to_string(mapp[s[i]]));
-            res.pop_back();
-            
-       }
-       else
-         mapp[s[i]]=res[i];
+// for(auto it: vect)
+//   p(it);
+//   p("\n");
+for(int i=0; i<26; i++)
+{   if(k==0)
+      break;
+    //    cout<<k<<" "<<res<<endl;
+    if(vect[i]==0 || i==n/m)
+      { 
+       
+        for(int j=0; j<k; j++)
+          res+=(i+'a');
+          break;
       }
-      bool x = true;
-      for(int i=0; i<n; i++)
-        {
-            if(res[i]==s[i])
-              break;
-              if(mapp[s[i]])
-        }
+
+  ll p=vect[i];
+     for(int j=0; j<k-p; j++)
+        res=res+(char)(i+'a');
+
+    if(k>vect[i])
+      k=vect[i];
 }
-   cout<<res<<endl;
+sort(res.begin(), res.end(), greater<int>());
+p(res);
 }
 return 0;
 }

@@ -5,7 +5,7 @@ using namespace std;
 #define  ll long long int
 #define  read(arr, n)  for(ll i=0; i<n; i++) cin>>arr[i];
 #define print(arr, n)  for(ll i=0; i<n; i++)  cout<<arr[i]<<' '; cout<<endl;
-#define fori(s,e,g)    for(ll i=s; i<=e;  i+=g)
+#define fori(s,e,g)    for(ll i=s; i<=e; i+=g)
 #define ford(s,e,g)    for(ll i=s; i>=e; i-=g)
 #define p(temp)        cout<<temp<<endl
  
@@ -19,12 +19,6 @@ int main()
 {
 ll tc;
 cin>>tc;
-while(tc--)
-{
-// your testcases here
-string s;
-cin>>s;
-p(s);
-}
+  tc%2==0? cout<<"Mahmoud\n":cout<<"Ehab\n";
 return 0;
 }

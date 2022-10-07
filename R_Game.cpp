@@ -5,7 +5,7 @@ using namespace std;
 #define  ll long long int
 #define  read(arr, n)  for(ll i=0; i<n; i++) cin>>arr[i];
 #define print(arr, n)  for(ll i=0; i<n; i++)  cout<<arr[i]<<' '; cout<<endl;
-#define fori(s,e,g)    for(ll i=s; i<=e;  i+=g)
+#define fori(s,e,g)    for(ll i=s; i<=e; i+=g)
 #define ford(s,e,g)    for(ll i=s; i>=e; i-=g)
 #define p(temp)        cout<<temp<<endl
  
@@ -17,14 +17,8 @@ void print_vect(vector < ll > &vect)  {for(auto it: vect)  cout<<it<<' '; cout<<
 // space for helper functions
 int main()
 {
-ll tc;
-cin>>tc;
-while(tc--)
-{
-// your testcases here
-string s;
-cin>>s;
-p(s);
-}
+ll n;
+cin>>n;
+n%2==0? p("2"):p("1");
 return 0;
 }

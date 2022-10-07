@@ -5,6 +5,9 @@ using namespace std;
 #define  ll long long int
 #define  read(arr, n)  for(ll i=0; i<n; i++) cin>>arr[i];
 #define print(arr, n)  for(ll i=0; i<n; i++)  cout<<arr[i]<<' '; cout<<endl;
+#define fori(s,e,g)    for(ll i=s; i<=e; i+=g)
+#define ford(s,e,g)    for(ll i=s; i>=e; i-=g)
+#define p(temp)        cout<<temp<<endl
  
 ll  sum(ll arr[],ll n)  {ll sum=0; for(ll i=0; i<n; i++) sum+=arr[i]; return sum;}
 ll  maxi(ll arr[],ll n)  {ll maxi= -1000000000000; for(ll i=0; i<n; i++) if(maxi<arr[i])maxi=arr[i]; return maxi;}
@@ -12,51 +15,24 @@ ll  mini(ll arr[],ll n)  {ll mini= 1000000000000; for(ll i=0; i<n; i++) if(mini>
 void print_vect(vector < ll > &vect)  {for(auto it: vect)  cout<<it<<' '; cout<<endl; }
  
 // space for helper functions
-
 int main()
 {
 ll tc;
 cin>>tc;
 while(tc--)
 {
-  
 // your testcases here
-ll n;
-cin>>n;
 string s;
 cin>>s;
-bool arr[26];
-memset(arr, false, sizeof(arr));
-string res="";
-unordered_map<char, char> mapp;
- for(int i=0; i<n; i++)
-    res+=(char(i+'a'));
-map<char, char> mapp;
-while(true)
+string res;
+fori(0,s.length()-1,1)
 {
-    for(int i=0; i<n; i++)
-      {
-        if(s[i]==res[i])
-            swap(res[i], res[(i+1)%n]);
-            
-       else if(mapp.find(s[i])!=mapp.end())
-       {
-            res.insert(i, to_string(mapp[s[i]]));
-            res.pop_back();
-            
-       }
-       else
-         mapp[s[i]]=res[i];
-      }
-      bool x = true;
-      for(int i=0; i<n; i++)
-        {
-            if(res[i]==s[i])
-              break;
-              if(mapp[s[i]])
-        }
+    if(i%2==0)
+      res+= s[i]=='a'?'b':'a';
+    else
+      res+=s[i]=='z'?'y':'z';  
 }
-   cout<<res<<endl;
+p(res);
 }
 return 0;
 }
