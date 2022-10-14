@@ -1,7 +1,17 @@
 {
     "files.associations": {
         "*cpp": "c++",
+        "*.cpp": "cpp",
         "iostream": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "iterator": "cpp",
+        "scoped_allocator": "cpp",
+        "regex": "cpp"
     }
 }

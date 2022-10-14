@@ -5,6 +5,9 @@ using namespace std;
 #define  ll long long int
 #define  read(arr, n)  for(ll i=0; i<n; i++) cin>>arr[i];
 #define print(arr, n)  for(ll i=0; i<n; i++)  cout<<arr[i]<<' '; cout<<endl;
+#define fori(s,e,g)    for(ll i=s; i<=e; i+=g)
+#define ford(s,e,g)    for(ll i=s; i>=e; i-=g)
+#define p(temp)        cout<<temp<<endl
  
 ll  sum(ll arr[],ll n)  {ll sum=0; for(ll i=0; i<n; i++) sum+=arr[i]; return sum;}
 ll  maxi(ll arr[],ll n)  {ll maxi= -1000000000000; for(ll i=0; i<n; i++) if(maxi<arr[i])maxi=arr[i]; return maxi;}
@@ -12,23 +15,6 @@ ll  mini(ll arr[],ll n)  {ll mini= 1000000000000; for(ll i=0; i<n; i++) if(mini>
 void print_vect(vector < ll > &vect)  {for(auto it: vect)  cout<<it<<' '; cout<<endl; }
  
 // space for helper functions
-bool solve(int even, int odd, vector<vector<vector<int>>> &dp, bool flag)
-{  
-       
-     
-    if(dp[odd][even][flag]!=-1)
-       return dp[odd][even][flag];
-
-     if(!solve(odd-1, even, dp, flag?!flag:flag) || !solve(odd, even-1, dp, flag?flag:!flag) ) 
-       {
-        dp[odd][even][flag]= 1;
-         return true;
-       }
-      
-         dp[odd][even][flag]= 0;
-         return false;
-       
-}
 int main()
 {
 ll tc;
@@ -36,18 +22,25 @@ cin>>tc;
 while(tc--)
 {
 // your testcases here
-ll n;
-cin>>n; 
-ll arr[n];
-read(arr,n);
-ll odd=0, even=0;
-for(int i=0; i<n; i++)
-  if(arr[i]%2==0)
-    even++;
-    else
-    odd++;
-    vector<vector<vector<int>>> dp(odd , vector<vector<int>>(even, vector<int>(-1,2))); 
-  cout<< solve(even, odd, dp, true)<<endl;  
-  }
+string s1,s2;
+cin>>s1>>s2;
+char ch1, ch2;
+ch1 = s1[s1.length()-1];
+ch2= s2[s2.length()-1];
+if(ch1 == 'L' && (ch2 == 'S' || ch2 == 'M'))
+ p('>');
+else if(ch2 == 'L' && (ch1 == 'S' || ch1 == 'M')) 
+ p('<');
+ else if(ch1 == 'M' && ch2 == 'S')
+  p('>');
+ else if(ch2 == 'M' && ch1 == 'S') 
+ p('<');
+ else if((ch1=='L' && ch2 =='L') )
+  s1.length()==s2.length()? p('='):  s1.length()>s2.length()? p('>'): p('<');
+  else if((ch1=='S' && ch2 =='S'))
+   s1.length()==s2.length()? p('='):  s1.length()<s2.length()? p('>'): p('<');
+   else if((ch1=='M' && ch2 =='M'))
+   p('=');
+}
 return 0;
 }

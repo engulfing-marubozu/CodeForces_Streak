@@ -18,7 +18,7 @@ void print_vect(vector < ll > &vect)  {for(auto it: vect)  cout<<it<<' '; cout<<
 int solve(ll pair, ll non_pair,vector<vector<int>> &dp)
 {
 
-
+     // cout<<pair<<" "<<non_pair<<endl;
       if(non_pair==1 || non_pair==0)
             { 
                 dp[pair][non_pair] =1;
@@ -57,11 +57,11 @@ fori(0, len-1, 1)
  mapp[s[i]]++;
  ll pair=0, non_pair=0;
 for(auto it: mapp)
- if(it.second==1)
+ if(it.second%2==1)
    non_pair++;
    else
-   pair++; 
-   cout<<pair<<" "<<non_pair<<endl;
+   pair+=(it.second/2); 
+  // cout<<pair<<" "<<non_pair<<endl;
 vector<vector<int>> dp(1100,vector<int>(1100, -1));
 //cout<<dp.size()<<dp[0].size();
 if(solve(pair, non_pair, dp))
