@@ -2,6 +2,7 @@
     "files.associations": {
         "*cpp": "c++",
         "*.cpp": "cpp",
+        "*.html": "html",
         "iostream": "cpp",
         "bitset": "cpp",
         "array": "cpp",
@@ -12,6 +13,7 @@
         "vector": "cpp",
         "iterator": "cpp",
         "scoped_allocator": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "cmath": "cpp"
     }
 }

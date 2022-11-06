@@ -1,4 +1,3 @@
-
 #include<bits/stdc++.h>
 using namespace std;
  
@@ -18,6 +17,14 @@ void print_vect(vector < ll > &vect)  {for(auto it: vect)  cout<<it<<' '; cout<<
 // space for helper functions
 int main()
 {
-cout<<"debomoy";
+
+// your testcases here
+ll a,c;
+cin>>a>>c;
+if(a%2==0)
+c-a<2? p(-1): cout<<a<<" "<<a+1<<" "<<a+2<<endl;
+else{
+  c-a<3? p(-1): cout<<a+1<<" "<<a+2<<" "<<a+3<<endl;  
+}
 return 0;
 }

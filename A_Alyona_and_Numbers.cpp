@@ -1,4 +1,3 @@
-
 #include<bits/stdc++.h>
 using namespace std;
  
@@ -18,6 +17,24 @@ void print_vect(vector < ll > &vect)  {for(auto it: vect)  cout<<it<<' '; cout<<
 // space for helper functions
 int main()
 {
-cout<<"debomoy";
+ll a,b;
+cin>>a>>b;
+if(a>b)
+{
+    ll temp = a;
+    a=b;
+    b=temp;
+}
+ll res=0;
+ for(int i=1; i<=a; i++)
+  {
+    ll x = b - (5- i%5) ;
+    res+=x<0?0:(x/5 + 1);
+
+  }
+
+   p(res);
 return 0;
 }
+
+ 

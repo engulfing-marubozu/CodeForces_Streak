@@ -1,4 +1,3 @@
-
 #include<bits/stdc++.h>
 using namespace std;
  
@@ -16,8 +15,34 @@ ll  mini(ll arr[],ll n)  {ll mini= 1000000000000; for(ll i=0; i<n; i++) if(mini>
 void print_vect(vector < ll > &vect)  {for(auto it: vect)  cout<<it<<' '; cout<<endl; }
  
 // space for helper functions
+ll lk(ll n)
+{
+    ll j=0;
+    while(n)
+     {
+        j++;
+        n/=10;
+     }
+     return j;
+}
 int main()
 {
-cout<<"debomoy";
+ll tc;
+cin>>tc;
+while(tc--)
+{
+// your testcases here
+ll a,b,c;
+cin>>a>>b>>c;
+ll k= pow(10,a-1);
+string s="";
+fori(0, b-c,1)
+    s+='1';
+fori(1, c-1, 1)
+  s+='0';
+
+  cout<<k<<" "<<stoll(s)<<endl;    
+}
 return 0;
 }
+
