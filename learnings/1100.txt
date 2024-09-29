@@ -1,0 +1,14 @@
+focus on core(very very basic) multiplications HCF LCM etc. like what they signify in real 
+life.
+
+HCF -> 
+in questions where I have figured a way to solve the problem for a single number in 
+the array using k and want to apply it for all the elements in the array so that the same number k holds solution for all the numbers in the array. try to thnk from HCF prospective. take hcf of all k's of n and the new k' holds the solution for everyone.
+
+multiplications -> 
+when I try to write a table of k suppose, rememeber that every kth number in the patttern will be divisible by k.
+common sense but yet so effective. helps in divisor problems.
+
+seive ->
+ 1__a____b___c___sqrt(n)___________n/c___________________n/b____________________________________n/a__________n
+

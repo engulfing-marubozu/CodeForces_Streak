@@ -1,2 +1,10 @@
-800
-swap kar karke sort kar skte hai kisi ko bhi
+800 - 900
+-> swap kar karke sort kar skte hai kisi ko bhi
+-> LCM
+-> HCF
+
+
+
+1100
+-> binary search (cow problem)
+-> In a big array, if small small continuous segments are increasing the value of indexes of output array by some amount, we can think of prefix array.
